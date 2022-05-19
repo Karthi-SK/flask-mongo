@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Mongo DB</title>
+	<style>
+        .response {
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+	<h1>Covid-19 Bot</h1>
+	<div>
+		{% for res in result %}
+	        <div class="response">
+	            <p>
+	            	<h5>
+	            		<strong style="text-transform: uppercase;">Query: </strong>
+	            	</h5>
+	            	<h2>
+	            		<i>{{ res['query'] }}</i>
+	            	</h2> 
+	            	
+	            	<h5>
+	            		<strong style="text-transform: uppercase;">Response: </strong>
+	            	</h5>
+	            	<h2>
+	            		<i>{{ res['response']}}</i>
+	            	</h2>
+	            </p>
+	        </div>
+    	{% endfor %}
+	</div>
+</body>
+</html>
