@@ -11,7 +11,7 @@ df = db.dialogflow
 
 @app.route('/')
 def index():
-	result = df.find()
+	result = df.find().sort('_id', -1)
 	return render_template('index.html', result=result)
 
 @app.route('/webhook', methods = ['POST', 'GET'])
